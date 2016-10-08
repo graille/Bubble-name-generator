@@ -79,7 +79,7 @@ else {
                         <?php
                         $dir = realpath('./fonts');
 
-                        echo '<select name="font">';
+                        echo '<select name="police">';
                         $dh = scandir($dir);
                         for($k = 0; $k < count($dh); $k++) {
                             $file = $dh[$k];

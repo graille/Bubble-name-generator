@@ -7,8 +7,8 @@ $repImg = "images/";
 $name = "b";
 
 // Recupération des variables
-$font = $_GET['font'];
-$font = $repFont.$font.'ttf';
+$font = $_GET['police'];
+$font = $repFont.$font.'.ttf';
 
 $prenom = ucfirst($_GET['prenom']);
 $nom = ucfirst($_GET['nom']);
