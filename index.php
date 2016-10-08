@@ -80,13 +80,15 @@ else {
                         $dir = realpath('./fonts');
 
                         echo '<select name="font">';
-                        $dh = opendir($dir);
+                        $dh = scandir($dir);
                         var_dump($dh);
+                        /*
                         while (($file = readdir($dh)) !== false) {
                             if (is_dir($file) && $file != '.' && $file != '..')
                                 echo '<option value="'.$file.'">'.$file.'</option>'."\n";
                         }
                         closedir($dh);
+                        */
                         echo '</select>';
                         ?>
                     </td>
