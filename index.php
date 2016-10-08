@@ -8,7 +8,7 @@
 <style>
 body
 {
-	background-image:url(Images/fond.jpg);
+	background-image:url(images/fond.jpg);
 	background-origin:content-box;
 	font-family: Calibri;
 }
@@ -44,8 +44,7 @@ h1 {
 }
 </style>
 <?php
-if(isset($_GET['prenom'], $_GET['nom']))
-{
+if(isset($_GET['prenom'], $_GET['nom'])) {
 	?>
 <table class="table" align="center" style="text-align:center; margin-top:200px; margin-bottom:auto; opacity:1; width:50%;" width="100%">
   <tr>
@@ -54,8 +53,7 @@ if(isset($_GET['prenom'], $_GET['nom']))
 </table>
 <?php
 }
-else
-{
+else {
 ?>
 <center>
   <h1>Bulle Generator</h1>
@@ -80,14 +78,15 @@ else
         <td colspan="2"><strong>Sens de la bulle</strong></td>
       </tr>
       <tr>
-        <td>Police de caractère</td>
-        <td>
+        <td colspan="2">Police de caractère</td>
+        <td colspan="2">
           <?php
           $dir = "/fonts";
 
           // Ouvre un dossier bien connu, et liste tous les dossiers
           echo '<select name="font">';
           if (is_dir($dir)) {
+            echo'ok';
             if ($dh = opendir($dir)) {
               while (($file = readdir($dh)) !== false) {
                 if (is_dir($file) && $file != '.' && $file != '..')
