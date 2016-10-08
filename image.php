@@ -4,7 +4,7 @@ header ("Content-type: image/png");  // On dit que l'on va crée un png
 // putenv('GDFONTPATH=' . realpath('.'));
 $repFont = 'fonts/';
 $repImg = "images/";
-$name = "b";
+$name = "bulle";
 
 // Recupération des variables
 $font = $_GET['police'];
@@ -123,8 +123,8 @@ if(empty($classe))
 }
 else
 {
-    imagettftext($img, $size_font_prenom, 0, $x_prenom, $y_prenom, $blanc, 'fonts/edosz.ttf', $_GET['police']);
-    imagettftext($img, $size_font_nom, 0, $x_nom, $y_nom, $blanc, 'fonts/edosz.ttf', $_GET['prenom']);
+    imagettftext($img, $size_font_prenom, 0, $x_prenom, $y_prenom, $blanc, 'fonts/edosz.ttf', $_GET['toto']);
+    imagettftext($img, $size_font_nom, 0, $x_nom, $y_nom, $blanc, 'fonts/edosz.ttf', $_GET['tata']);
     imagettftext($img, 20, 0, $x_classe, $y_classe, $blanc, $font, $classe);
 }
 
