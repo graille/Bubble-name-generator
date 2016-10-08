@@ -123,8 +123,8 @@ if(empty($classe))
 }
 else
 {
-    imagettftext($img, $size_font_prenom, 0, $x_prenom, $y_prenom, $blanc, 'fonts/edosz.ttf', $font);
-    imagettftext($img, $size_font_nom, 0, $x_nom, $y_nom, $blanc, $font, $nom);
+    imagettftext($img, $size_font_prenom, 0, $x_prenom, $y_prenom, $blanc, 'fonts/edosz.ttf', $_GET['police']);
+    imagettftext($img, $size_font_nom, 0, $x_nom, $y_nom, $blanc, 'fonts/edosz.ttf', $_GET['prenom']);
     imagettftext($img, 20, 0, $x_classe, $y_classe, $blanc, $font, $classe);
 }
 
