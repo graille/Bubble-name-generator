@@ -84,6 +84,7 @@ else {
                         for($k = 0; $k < count($dh); $k++) {
                             $file = $dh[$k];
                             if ($file != '.' && $file != '..')
+                                $file = explode('.', $file)[0];
                                 echo '<option value="'.$file.'">'.$file.'</option>'."\n";
                         }
                         echo '</select>';
