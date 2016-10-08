@@ -93,12 +93,10 @@ switch($cote)
 
 $img = imagecreatefrompng($repImg.$name.".png");
 
-// Déclaration des couleurs //
-
+// Déclaration des couleurs
 $blanc = imagecolorallocate($img, 255, 255, 255);
-
 // ------------------------------------ //
-$taille_prenom = imageftbbox($size_font_prenom, 0, '/fonts/edosz.ttf', $prenom); // Retourne un array
+$taille_prenom = imageftbbox($size_font_prenom, 0, $font, $prenom); // Retourne un array
 $taille_nom = imageftbbox($size_font_nom, 0, $font, $nom); // Retourne un array
 
 if(!empty($classe))
@@ -124,7 +122,7 @@ if(empty($classe))
 }
 else
 {
-    imagettftext($img, $size_font_prenom, 0, $x_prenom, $y_prenom, $blanc, $font, $prenom);
+    imagettftext($img, $size_font_prenom, 0, $x_prenom, $y_prenom, $blanc, 'fonts/edosz.ttf', $prenom);
     imagettftext($img, $size_font_nom, 0, $x_nom, $y_nom, $blanc, $font, $nom);
     imagettftext($img, 20, 0, $x_classe, $y_classe, $blanc, $font, $classe);
 }
