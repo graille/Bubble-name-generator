@@ -81,14 +81,11 @@ else {
 
                         echo '<select name="font">';
                         $dh = scandir($dir);
-                        var_dump($dh);
-                        /*
-                        while (($file = readdir($dh)) !== false) {
-                            if (is_dir($file) && $file != '.' && $file != '..')
+                        for($k = 0; $k < count($dh); $k++) {
+                            $file = $dh[$k];
+                            if ($file != '.' && $file != '..')
                                 echo '<option value="'.$file.'">'.$file.'</option>'."\n";
                         }
-                        closedir($dh);
-                        */
                         echo '</select>';
                         ?>
                     </td>
