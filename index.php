@@ -78,12 +78,10 @@ else {
                     <td colspan="2">
                         <?php
                         $dir = realpath('./fonts');
-                        echo $dir.'<br />';
-                        if(is_dir($dir))
-                            echo 'Yes';
 
                         echo '<select name="font">';
                         $dh = opendir($dir);
+                        var_dump($dh);
                         while (($file = readdir($dh)) !== false) {
                             if (is_dir($file) && $file != '.' && $file != '..')
                                 echo '<option value="'.$file.'">'.$file.'</option>'."\n";
