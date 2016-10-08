@@ -80,6 +80,27 @@ else
         <td colspan="2"><strong>Sens de la bulle</strong></td>
       </tr>
       <tr>
+        <td>Police de caractère</td>
+        <td>
+          <?php
+          $dir = "/fonts";
+
+          // Ouvre un dossier bien connu, et liste tous les dossiers
+          echo '<select name="font">';
+          if (is_dir($dir)) {
+            if ($dh = opendir($dir)) {
+              while (($file = readdir($dh)) !== false) {
+                if (is_dir($file) && $file != '.' && $file != '..')
+                  echo '<option value="'.$file.'">'.$file.'</option>'."\n";
+              }
+              closedir($dh);
+            }
+          }
+          echo '</select>';
+          ?>
+        </td>
+      </tr>
+      <tr>
         <td width="25%"><input type="radio" name="cote" value="g" checked="checked"/></td>
         <td width="25%">Gauche</td>
         <td width="25%"><input type="radio" name="sens" value="h" checked="checked"/></td>

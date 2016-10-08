@@ -1,23 +1,21 @@
 <?php
-header ("Content-type: image/png");  // On dit que l'on va crée un png
+header ("Content-type: image/png");  // On dit que l'on va crï¿½e un png
 
 // putenv('GDFONTPATH=' . realpath('.'));  
-$font = 'Fonts/edosz.ttf';
-$repImg = "Images/";
+$repFont = 'fonts/';
+$repImg = "images/";
 $name = "b";
 
-// Recupération des variables //
-
+// Recupï¿½ration des variables //
+$font = $repFont.strval($_GET['font']);
 $prenom = ucfirst($_GET['prenom']);
 $nom = ucfirst($_GET['nom']);
 $classe = $_GET['classe'];
 
 $cote = $_GET['cote'];
 $sens = $_GET['sens'];
-	
 
 // Code //
-
 $longueur_prenom = strlen($prenom);
 $longueur_nom = strlen($nom);
 
@@ -93,7 +91,7 @@ switch($cote)
 
 $img = imagecreatefrompng($repImg.$name.".png");
 
-// Déclaration des couleurs //
+// Dï¿½claration des couleurs //
 
 $blanc = imagecolorallocate($img, 255, 255, 255);
 
@@ -113,6 +111,7 @@ if(!empty($classe))
 
 $x_prenom = ($infos_image['largeur'] - $infos_prenom['largeur']) / 2;
 $x_nom = ($infos_image['largeur'] - $infos_nom['largeur']) / 2;
+
 if(!empty($classe))
 	$x_classe = ($infos_image['largeur'] - $infos_classe['largeur']) / 2;
 
