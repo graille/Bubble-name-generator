@@ -77,8 +77,10 @@ else {
                     <td colspan="2"><strong>Police de caractère</strong></td>
                     <td colspan="2">
                         <?php
-                        $dir = realpath('./').'/fonts';
+                        $dir = realpath('./fonts');
                         echo $dir.'<br />';
+                        if(is_dir($dir))
+                            echo 'Yes';
 
                         echo '<select name="font">';
                         $dh = opendir($dir);
