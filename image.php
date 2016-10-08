@@ -4,11 +4,10 @@ header ("Content-type: image/png");  // On dit que l'on va crée un png
 // putenv('GDFONTPATH=' . realpath('.'));
 $repFont = 'fonts/';
 $repImg = "images/";
-$name = "bulle";
+$name = "b";
 
 // Recupération des variables
-$font = $_GET['police'];
-$font = $repFont.$font;
+$font = $repFont.$_GET['police'];
 
 $prenom = ucfirst($_GET['prenom']);
 $nom = ucfirst($_GET['nom']);
@@ -96,6 +95,7 @@ $img = imagecreatefrompng($repImg.$name.".png");
 
 // Déclaration des couleurs
 $blanc = imagecolorallocate($img, 255, 255, 255);
+
 // ------------------------------------ //
 $taille_prenom = imageftbbox($size_font_prenom, 0, $font, $prenom); // Retourne un array
 $taille_nom = imageftbbox($size_font_nom, 0, $font, $nom); // Retourne un array
