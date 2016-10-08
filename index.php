@@ -59,7 +59,7 @@ else {
         <h1>Bulle Generator</h1>
     </center>
     <div align="center">
-        <form action="index.php" method="get">
+        <form action="index.php" method="post">
             <table class="table">
                 <tr>
                     <td colspan="2"><strong>Prenom :</strong></td>

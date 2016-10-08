@@ -7,16 +7,16 @@ $repImg = "images/";
 $name = "bulle";
 
 // Recupération des variables
-$font = $_GET['police'];
+$font = $_POST['police'];
 $font = $repFont.$font.'.ttf';
 
-$prenom = ucfirst($_GET['prenom']);
-$nom = ucfirst($_GET['nom']);
+$prenom = ucfirst($_POST['prenom']);
+$nom = ucfirst($_POST['nom']);
 
-$classe = $_GET['classe'];
+$classe = $_POST['classe'];
 
-$cote = $_GET['cote'];
-$sens = $_GET['sens'];
+$cote = $_POST['cote'];
+$sens = $_POST['sens'];
 
 // Code //
 $longueur_prenom = strlen($prenom);
@@ -123,8 +123,8 @@ if(empty($classe))
 }
 else
 {
-    imagettftext($img, $size_font_prenom, 0, $x_prenom, $y_prenom, $blanc, 'fonts/edosz.ttf', $_GET['toto']);
-    imagettftext($img, $size_font_nom, 0, $x_nom, $y_nom, $blanc, 'fonts/edosz.ttf', $_GET['tata']);
+    imagettftext($img, $size_font_prenom, 0, $x_prenom, $y_prenom, $blanc, 'fonts/edosz.ttf', $font);
+    imagettftext($img, $size_font_nom, 0, $x_nom, $y_nom, $blanc, 'fonts/edosz.ttf', $prenom);
     imagettftext($img, 20, 0, $x_classe, $y_classe, $blanc, $font, $classe);
 }
 
