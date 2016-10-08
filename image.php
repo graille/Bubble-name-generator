@@ -1,13 +1,14 @@
 <?php
-header ("Content-type: image/png");  // On dit que l'on va cr�e un png
+header ("Content-type: image/png");  // On dit que l'on va crée un png
 
 // putenv('GDFONTPATH=' . realpath('.'));  
 $repFont = 'fonts/';
 $repImg = "images/";
 $name = "b";
 
-// Recup�ration des variables //
-$font = $repFont.strval($_GET['font']);
+// Recupération des variables
+$font = $repFont.$_GET['font'];
+echo $font;
 $prenom = ucfirst($_GET['prenom']);
 $nom = ucfirst($_GET['nom']);
 $classe = $_GET['classe'];
@@ -91,14 +92,14 @@ switch($cote)
 
 $img = imagecreatefrompng($repImg.$name.".png");
 
-// D�claration des couleurs //
+// Déclaration des couleurs //
 
 $blanc = imagecolorallocate($img, 255, 255, 255);
 
 // ------------------------------------ //
-
 $taille_prenom = imageftbbox($size_font_prenom, 0, $font, $prenom); // Retourne un array
 $taille_nom = imageftbbox($size_font_nom, 0, $font, $nom); // Retourne un array
+
 if(!empty($classe))
 	$taille_classe = imageftbbox(20, 0, $font, $classe); // Retourne un array
 
@@ -130,8 +131,7 @@ else
 imagealphablending($img, false);
 imagesavealpha($img, true);
 
-// Affichage //
-
+// Affichage
 imagepng($img);
 imagedestroy($img);
 ?>
