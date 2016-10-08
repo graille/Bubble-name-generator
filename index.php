@@ -77,13 +77,10 @@ else {
         <td colspan="2"><strong>Police de caractère</strong></td>
         <td colspan="2">
           <?php
-          echo realpath('./');
-          $dir = "/var/www/html/pipin/fonts";
+          $dir = realpath('./').'/fonts';
 
           // Ouvre un dossier bien connu, et liste tous les dossiers
           echo '<select name="font">';
-          if (is_dir($dir)) {
-              echo'ok';
             if ($dh = opendir($dir)) {
               while (($file = readdir($dh)) !== false) {
                 if (is_dir($file) && $file != '.' && $file != '..')
@@ -91,7 +88,6 @@ else {
               }
               closedir($dh);
             }
-          }
           echo '</select>';
           ?>
         </td>
