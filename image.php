@@ -8,7 +8,6 @@ $name = "b";
 
 // Recupération des variables
 $font = $repFont.$_GET['font'];
-echo $font;
 $prenom = ucfirst($_GET['prenom']);
 $nom = ucfirst($_GET['nom']);
 $classe = $_GET['classe'];
