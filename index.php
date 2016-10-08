@@ -74,14 +74,16 @@ else {
         <td colspan="2"><input type="text" name="classe" class="inputT" size="50"/></td>
       </tr>
       <tr>
-        <td colspan="2">Police de caractère</td>
+        <td colspan="2"><strong>Police de caractère</strong></td>
         <td colspan="2">
           <?php
-          $dir = "fonts";
+          echo realpath('./');
+          $dir = "/var/www/html/pipin/fonts";
 
           // Ouvre un dossier bien connu, et liste tous les dossiers
           echo '<select name="font">';
           if (is_dir($dir)) {
+              echo'ok';
             if ($dh = opendir($dir)) {
               while (($file = readdir($dh)) !== false) {
                 if (is_dir($file) && $file != '.' && $file != '..')
