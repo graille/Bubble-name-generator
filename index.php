@@ -48,7 +48,7 @@ if(isset($_GET['prenom'], $_GET['nom'])) {
     ?>
     <table class="table" align="center" style="text-align:center; margin-top:200px; margin-bottom:auto; opacity:1; width:50%;" width="100%">
         <tr>
-            <td><img src="image.php?prenom=<?php echo $_GET['prenom']; ?>&nom=<?php echo $_GET['nom']; ?>&classe=<?php echo $_GET['classe']; ?>&cote=<?php echo $_GET['cote']; ?>&sens=<?php echo $_GET['sens']; ?>" /></td>
+            <td><img src="image.php?prenom=<?php echo $_GET['prenom']; ?>&police=<?php echo $_GET['police']; ?>&nom=<?php echo $_GET['nom']; ?>&classe=<?php echo $_GET['classe']; ?>&cote=<?php echo $_GET['cote']; ?>&sens=<?php echo $_GET['sens']; ?>" /></td>
         </tr>
     </table>
     <?php
@@ -59,7 +59,7 @@ else {
         <h1>Bulle Generator</h1>
     </center>
     <div align="center">
-        <form action="index.php" method="post">
+        <form action="index.php" method="get">
             <table class="table">
                 <tr>
                     <td colspan="2"><strong>Prenom :</strong></td>
@@ -85,7 +85,6 @@ else {
                         for($k = 0; $k < count($dh); $k++) {
                             $file = $dh[$k];
                             if ($file != '.' && $file != '..')
-                                $file = explode('.', $file)[0];
                                 echo '<option value="'.$file.'">'.$file.'</option>';
                         }
                         echo '</select>';

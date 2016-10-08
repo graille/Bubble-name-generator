@@ -8,7 +8,7 @@ $name = "bulle";
 
 // Recupération des variables
 $font = $_POST['police'];
-$font = $repFont.$font.'.ttf';
+$font = $repFont.$font;
 
 $prenom = ucfirst($_POST['prenom']);
 $nom = ucfirst($_POST['nom']);
@@ -116,17 +116,11 @@ $x_nom = ($infos_image['largeur'] - $infos_nom['largeur']) / 2;
 if(!empty($classe))
     $x_classe = ($infos_image['largeur'] - $infos_classe['largeur']) / 2;
 
-if(empty($classe))
-{
-    imagettftext($img, $size_font_prenom, 0, $x_prenom, $y_prenom, $blanc, $font, $prenom);
-    imagettftext($img, $size_font_nom, 0, $x_nom, $y_nom, $blanc, $font, $nom);
-}
-else
-{
-    imagettftext($img, $size_font_prenom, 0, $x_prenom, $y_prenom, $blanc, 'fonts/edosz.ttf', $font);
-    imagettftext($img, $size_font_nom, 0, $x_nom, $y_nom, $blanc, 'fonts/edosz.ttf', $prenom);
+
+imagettftext($img, $size_font_prenom, 0, $x_prenom, $y_prenom, $blanc, $font, $prenom);
+imagettftext($img, $size_font_nom, 0, $x_nom, $y_nom, $blanc, $font, $nom);
+if(!empty($classe))
     imagettftext($img, 20, 0, $x_classe, $y_classe, $blanc, $font, $classe);
-}
 
 imagealphablending($img, false);
 imagesavealpha($img, true);
